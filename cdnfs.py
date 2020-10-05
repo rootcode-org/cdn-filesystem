@@ -110,16 +110,16 @@ class Storage:
         self.listing=[]
 
     def list_storage(self):
-        raise Exception("virtual")        # provided by derived class
+        raise NotImplementedError()        # provided by derived class
 
     def file_exists(self, hash):
         return hash in self.listing
 
     def put_file(self, hash, data, content_type, cache_control, compress):
-        raise Exception("virtual")        # provided by derived class
+        raise NotImplementedError()        # provided by derived class
 
     def get_file(self, hash):
-        raise Exception("virtual")        # provided by derived class
+        raise NotImplementedError()        # provided by derived class
 
     def upload_snapshot(self, base_path, relative_path, local_exclusions, manifest_hash_digits, cache_control, content_types, gzip_types):
         manifest = {}
